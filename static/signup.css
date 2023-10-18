@@ -158,6 +158,14 @@ form .button input {
     text-align: center;
 }
 
+.signup-link a{
+    text-decoration: none;
+}
+
+.signup-link a:hover{
+    text-decoration: underline;
+}
+
 .alink:hover{
     background: linear-gradient(-135deg, #71b7e6, #9b59b6);
 }
