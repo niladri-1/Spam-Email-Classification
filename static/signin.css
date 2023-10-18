@@ -1,11 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
-*{
+
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
-html,body{
+
+html,
+body {
   display: grid;
   height: 100%;
   width: 100%;
@@ -13,17 +16,182 @@ html,body{
   background: #f2f2f2;
   background: linear-gradient(-135deg, #c850c0, #4158d0);
 }
-::selection{
+
+::selection {
   background: #4158d0;
   color: #fff;
 }
-.wrapper{
+
+.wrapper {
   width: 380px;
   background: #fff;
   border-radius: 15px;
-  box-shadow: 0px 15px 20px rgba(0,0,0,0.1);
+  box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.1);
 }
-.wrapper .title{
+
+/*header section*/
+.hero_area {
+  position: relative;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.hero_area .hero_bg_box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.hero_area .hero_bg_box .bg_img_box {
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.hero_area .hero_bg_box img {
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.sub_page .hero_area {
+  min-height: auto;
+  background: linear-gradient(130deg, #231a6f, #0f054c);
+}
+
+.sub_page .hero_area .hero_bg_box {
+  display: none;
+}
+
+.header_section {
+  padding: 15px 0;
+}
+
+.header_section .container-fluid {
+  padding-right: 25px;
+  padding-left: 25px;
+}
+
+.navbar-brand span {
+  font-weight: bold;
+  font-size: 24px;
+  color: #ffffff;
+}
+
+.custom_nav-container {
+  padding: 0;
+}
+
+.custom_nav-container .navbar-nav {
+  margin-left: auto;
+}
+
+.custom_nav-container .navbar-nav .nav-item .nav-link {
+  padding: 5px 20px;
+  color: #ffffff;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: 5px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.custom_nav-container .navbar-nav .nav-item:hover .nav-link, .custom_nav-container .navbar-nav .nav-item.active .nav-link {
+  color: #00bbf0;
+}
+
+.custom_nav-container .navbar-nav .nav-item.active .nav-link {
+  font-weight: 600;
+}
+
+.custom_nav-container .nav_search-btn {
+  width: 35px;
+  height: 35px;
+  padding: 0;
+  border: none;
+  color: #ffffff;
+}
+
+.custom_nav-container .nav_search-btn:hover {
+  color: #00bbf0;
+}
+
+.custom_nav-container .navbar-toggler {
+  outline: none;
+}
+
+.custom_nav-container .navbar-toggler {
+  padding: 0;
+  width: 37px;
+  height: 42px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.custom_nav-container .navbar-toggler span {
+  display: block;
+  width: 35px;
+  height: 4px;
+  background-color: #ffffff;
+  margin: 7px 0;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  position: relative;
+  border-radius: 5px;
+  transition: all 0.3s;
+}
+
+.custom_nav-container .navbar-toggler span::before, .custom_nav-container .navbar-toggler span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #ffffff;
+  top: -10px;
+  border-radius: 5px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.custom_nav-container .navbar-toggler span::after {
+  top: 10px;
+}
+
+.custom_nav-container .navbar-toggler[aria-expanded="true"] {
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+}
+
+.custom_nav-container .navbar-toggler[aria-expanded="true"] span {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.custom_nav-container .navbar-toggler[aria-expanded="true"] span::before, .custom_nav-container .navbar-toggler[aria-expanded="true"] span::after {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  top: 0;
+}
+
+.wrapper .title {
   font-size: 35px;
   font-weight: 600;
   text-align: center;
@@ -33,16 +201,19 @@ html,body{
   border-radius: 15px 15px 0 0;
   background: linear-gradient(-135deg, #c850c0, #4158d0);
 }
-.wrapper form{
+
+.wrapper form {
   padding: 10px 30px 50px 30px;
 }
-.wrapper form .field{
+
+.wrapper form .field {
   height: 50px;
   width: 100%;
   margin-top: 20px;
   position: relative;
 }
-.wrapper form .field input{
+
+.wrapper form .field input {
   height: 100%;
   width: 100%;
   outline: none;
@@ -52,11 +223,13 @@ html,body{
   border-radius: 25px;
   transition: all 0.3s ease;
 }
+
 .wrapper form .field input:focus,
-form .field input:valid{
+form .field input:valid {
   border-color: #4158d0;
 }
-.wrapper form .field label{
+
+.wrapper form .field label {
   position: absolute;
   top: 50%;
   left: 20px;
@@ -67,15 +240,17 @@ form .field input:valid{
   transform: translateY(-50%);
   transition: all 0.3s ease;
 }
-form .field input:focus ~ label,
-form .field input:valid ~ label{
+
+form .field input:focus~label,
+form .field input:valid~label {
   top: 0%;
   font-size: 16px;
   color: #4158d0;
   background: #fff;
   transform: translateY(-50%);
 }
-form .content{
+
+form .content {
   display: flex;
   width: 100%;
   height: 50px;
@@ -83,25 +258,30 @@ form .content{
   align-items: center;
   justify-content: space-around;
 }
-form .content .checkbox{
+
+form .content .checkbox {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-form .content input{
+
+form .content input {
   width: 15px;
   height: 15px;
   background: red;
 }
-form .content label{
+
+form .content label {
   color: #262626;
   user-select: none;
   padding-left: 5px;
 }
-form .content .pass-link{
+
+form .content .pass-link {
   color: "";
 }
-form .field input[type="submit"]{
+
+form .field input[type="submit"] {
   color: #fff;
   border: none;
   padding-left: 0;
@@ -112,20 +292,24 @@ form .field input[type="submit"]{
   background: linear-gradient(-135deg, #c850c0, #4158d0);
   transition: all 0.3s ease;
 }
-form .field input[type="submit"]:active{
+
+form .field input[type="submit"]:active {
   transform: scale(0.95);
 }
-form .signup-link{
+
+form .signup-link {
   color: #262626;
   margin-top: 20px;
   text-align: center;
 }
+
 form .pass-link a,
-form .signup-link a{
+form .signup-link a {
   color: #4158d0;
   text-decoration: none;
 }
+
 form .pass-link a:hover,
-form .signup-link a:hover{
+form .signup-link a:hover {
   text-decoration: underline;
 }
