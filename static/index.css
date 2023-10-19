@@ -1,0 +1,414 @@
+/* Reset some default styles */
+body, h1, p, label {
+    margin: 0;
+    padding: 0;
+}
+
+/* Set a background color and text color for the body */
+body {
+    background-color: #f2f2f2;
+    font-family: Arial, sans-serif;
+    letter-spacing: 1px;
+}
+a{
+    text-decoration: none;
+}
+
+/* head start */
+/*header section*/
+.header_section {
+    padding: 15px 0;
+}
+
+.header_section .container-fluid {
+    padding-right: 25px;
+    padding-left: 25px;
+}
+
+.navbar-brand span {
+    font-weight: bold;
+    font-size: 24px;
+    color: #ffffff;
+}
+
+.custom_nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.custom_nav-container .navbar-nav {
+    margin-left: auto;
+    display: flex; /* Display the navigation links as a flex container */
+    list-style: none; /* Remove list styles */
+    padding: 0; /* Remove padding */
+    margin-right: 25px;
+}
+
+.custom_nav-container .navbar-nav .nav-item {
+    margin-left: 20px; /* Add spacing between the navigation links */
+}
+
+.custom_nav-container .navbar-nav .nav-item .nav-link {
+    padding: 5px 20px;
+    color: #ffffff;
+    text-align: center;
+    text-transform: uppercase;
+    border-radius: 5px;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.custom_nav-container .navbar-nav .nav-item:hover .nav-link,
+.custom_nav-container .navbar-nav .nav-item.active .nav-link {
+    color: #00bbf0;
+}
+
+.custom_nav-container .navbar-nav .nav-item.active .nav-link {
+    font-weight: 600;
+}
+
+.custom_nav-container .nav_search-btn {
+    width: 35px;
+    height: 35px;
+    padding: 0;
+    border: none;
+    color: #ffffff;
+}
+
+.custom_nav-container .nav_search-btn:hover {
+    color: #00bbf0;
+}
+
+/* .custom_nav-container .navbar-toggler {
+    outline: none;
+    padding: 0;
+    width: 37px;
+    height: 42px;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+} */
+/*
+.custom_nav-container .navbar-toggler span {
+    display: block;
+    width: 35px;
+    height: 4px;
+    background-color: #ffffff;
+    margin: 7px 0;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    position: relative;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+.custom_nav-container .navbar-toggler span::before,
+.custom_nav-container .navbar-toggler span::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #ffffff;
+    top: -10px;
+    border-radius: 5px;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+} */
+/*
+.custom_nav-container .navbar-toggler span::after {
+    top: 10px;
+}
+
+.custom_nav-container .navbar-toggler[aria-expanded="true"] {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
+
+.custom_nav-container .navbar-toggler[aria-expanded="true"] span {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.custom_nav-container .navbar-toggler[aria-expanded="true"] span::before,
+.custom_nav-container .navbar-toggler[aria-expanded="true"] span::after {
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    top: 0;
+} */
+
+/*end header section*/
+
+/* head end */
+
+/* Style the page title */
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.spm {
+    margin-top: 70px;
+    text-align: left; /* Ensure text alignment is left */
+    margin-left: 145px; /* Reset any margin on the left */
+}
+
+/* Style the form container */
+.form-container {
+    background-color: #ffffff;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style the form elements */
+form {
+    text-align: center;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Light Mode */
+.light-mode {
+    background-color: #f2f2f2;
+    color: #333;
+    transition: 500ms;
+  }
+
+
+  /* Dark Mode */
+  .dark-mode {
+    background-color: #000C1D;
+    transition: 500ms;
+    color: #fff;
+  }
+
+  /* Initially hide the moon (dark mode) icon */
+#moon-icon {
+    display: none;
+}
+
+/* Toggle the visibility of the icons based on the active theme */
+.light-mode #sun-icon,
+.dark-mode #moon-icon {
+    display: inline;
+}
+
+.dark-mode #moon-icon {
+    color: #fff;
+}
+
+.light-mode #moon-icon,
+.dark-mode #sun-icon {
+    display: none;
+}
+
+/* Hover effect for buttons */
+button:hover {
+    background-color: transparent; /* Slightly darker green on hover */
+}
+
+.theme-toggle-button {
+    position: absolute;
+    top: 10px; /* Adjust the top positioning as needed */
+    right: 10px; /* Move the button to the right */
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    margin: 10px;
+}
+
+/* Style for the "Predict" button in the form */
+input[type="submit"] {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    font-size: 25px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+/* Create an animation that changes the border color through RGB values */
+@keyframes rgbBorderAnimation {
+    0% {
+        border-color: #007BFF; /* Start with the initial blue color */
+    }
+    25% {
+        border-color: #00FF00; /* Transition to green at 25% */
+    }
+    50% {
+        border-color: #FF0000; /* Transition to red at 50% */
+    }
+    75% {
+        border-color: #FFFF00; /* Transition to yellow at 75% */
+    }
+    100% {
+        border-color: #FF00FF; /* End with magenta at 100% */
+    }
+}
+
+/* Apply the border color animation and a smooth transition on hover */
+input[type="submit"] {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    border: 5px solid #007BFF; /* Initial blue border color */
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+/* Define the hover effect */
+input[type="submit"]:hover {
+    animation: rgbBorderAnimation 2s infinite; /* Apply the RGB border color animation */
+    background: #000C1D;
+    transform: scale(1.1); /* Add a scaling effect on hover */
+}
+
+
+/* Style for other buttons if you have additional buttons */
+/* Add CSS rules for other buttons here */
+
+#sun-icon{
+    color: #333;
+}
+
+@keyframes borderColorAnimation {
+    0% {
+        border-color: rgba(255, 0, 0, 1); /* Start with red */
+    }
+    25% {
+        border-color: rgba(0, 255, 0, 1); /* Transition to green at 25% */
+    }
+    50% {
+        border-color: rgba(0, 0, 255, 1); /* Transition to blue at 50% */
+    }
+    75% {
+        border-color: rgba(255, 255, 0, 1); /* Transition to yellow at 75% */
+    }
+    100% {
+        border-color: rgba(255, 0, 255, 1); /* End with magenta at 100% */
+    }
+}
+
+textarea {
+    width: 80%;
+    height: 250px;
+    padding: 30px;
+    margin: 5px 0;
+    border: 5px solid rgba(255, 0, 0, 1); /* Initial red border */
+    border-radius: 25px;
+    resize: none;
+    text-align: left;
+    margin-left: 0;
+    animation: borderColorAnimation 5s infinite; /* Apply the animation for 5 seconds */
+    transition: 500ms;
+    background-color: transparent;
+    color: #ffffff;
+}
+
+textarea::-webkit-scrollbar {
+    width: 12px; /* Set the width of the scrollbar */
+}
+
+/* Style the thumb (the draggable part of the scrollbar) */
+textarea::-webkit-scrollbar-thumb {
+    background-color: #FFFF00; /* Set the background color of the thumb */
+    border-radius: 6px; /* Round the corners of the thumb */
+}
+
+/* Style the track (the background of the scrollbar) */
+textarea::-webkit-scrollbar-track {
+    background-color: transparent; /* Set the background color of the track */
+    border-radius: 6px; /* Round the corners of the track */
+}
+
+/* Hide the arrows (buttons at the ends of the scrollbar) */
+textarea::-webkit-scrollbar-button {
+    display: none;
+}
+
+textarea:active {
+    border: 5px solid rgba(255, 0, 0, 1); /* Initial red border */
+    animation: borderColorAnimation 5s infinite; /* Apply the animation for 5 seconds */
+ /* Or you can set it to a different color or style */
+}
+
+
+
+.clear-text {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    border: 5px solid #007BFF; /* Initial blue border color */
+    font-size: 25px;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-left: 12px;
+    transition: background-color 0.3s, border-color 0.3s; /* Add a transition effect for the background and border color */
+    transition: 500ms;
+}
+
+/* Apply the hover effect with an RGB border color combination */
+.clear-text:hover {
+    background: #000C1D;
+    animation: borderColorAnimation 2s infinite;
+    transform: scale(1.1);
+    transition: 500ms;
+}
+
+
+/* ------------------------- */
+/* For the light mode, change the text color of .navbar-nav to black */
+.light-mode .custom_nav-container .navbar-nav .nav-link, .navbar-brand {
+    color: #000;
+}
+
+/* Additional styles for light mode */
+.light-mode .custom_nav-container .navbar-nav .nav-item:hover .nav-link,
+.light-mode .custom_nav-container .navbar-nav .nav-item.active .nav-link {
+    color: #00bbf0;
+}
+
+/* Additional styles for dark mode */
+.dark-mode .custom_nav-container .navbar-nav .nav-link {
+    color: #fff;
+}
+
+/* Toggle the visibility of the icons based on the active theme */
+.light-mode #moon-icon,
+.dark-mode #sun-icon {
+    display: inline;
+}
+
+.dark-mode #moon-icon {
+    color: #fff;
+}
+
+.light-mode #moon-icon,
+.dark-mode #sun-icon {
+    display: none;
+}

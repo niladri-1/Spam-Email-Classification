@@ -7,6 +7,7 @@
     <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.png') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='signup.css') }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 </head>
 
 <body>
@@ -33,11 +34,17 @@
                     </div>
                     <div class="input-box">
                         <span class="details">Password</span>
-                        <input type="password" name="password" placeholder="Enter your password" required>
+                        <div class="password-input">
+                            <input type="password" name="password" id="password" placeholder="Enter your password" required>
+                            <button type="button" id="togglePassword"><i class="fa-solid fa-eye"></i></button>
+                        </div>
                     </div>
                     <div class="input-box">
                         <span class="details">Confirm Password</span>
-                        <input type="password" name="confirm_password" placeholder="Confirm your password" required>
+                        <div class="password-input">
+                            <input type="password" name="confirm_password" id="confirm_password" placeholder="Confirm your password" required>
+                            <button type="button" id="toggleConfirmPassword"><i class="fa-solid fa-eye"></i></button>
+                        </div>
                     </div>
                 </div>
                 <div class="button">
@@ -49,5 +56,34 @@
             </form>
         </div>
     </div>
+
+    <script>
+        document.getElementById("togglePassword").addEventListener("click", function () {
+            const passwordField = document.getElementById("password");
+            const passwordToggle = document.getElementById("togglePassword");
+
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+                passwordToggle.innerHTML = '<i class="fa-solid fa-eye-slash"></i>';
+            } else {
+                passwordField.type = "password";
+                passwordToggle.innerHTML = '<i class="fa-solid fa-eye"></i>';
+            }
+        });
+
+        document.getElementById("toggleConfirmPassword").addEventListener("click", function () {
+            const confirmPasswordField = document.getElementById("confirm_password");
+            const confirmPasswordToggle = document.getElementById("toggleConfirmPassword");
+
+            if (confirmPasswordField.type === "password") {
+                confirmPasswordField.type = "text";
+                confirmPasswordToggle.innerHTML = '<i class="fa-solid fa-eye-slash"></i>';
+            } else {
+                confirmPasswordField.type = "password";
+                confirmPasswordToggle.innerHTML = '<i class="fa-solid fa-eye"></i>';
+            }
+        });
+    </script>
 </body>
+
 </html>

@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, session
+from flask import Flask, render_template, request, redirect, url_for, session, flash
 import pickle
 import string
 import nltk
@@ -102,7 +102,8 @@ def register():
         db.commit()
         cur.close()
 
-        return "Registration successful"
+        flash('Registration successful', 'success')
+        return redirect('/signin')
 
     return "Invalid request method"
 

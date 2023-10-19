@@ -9,7 +9,7 @@
 
 html,
 body {
-  display: grid;
+  /* display: grid; */
   height: 100%;
   width: 100%;
   place-items: center;
@@ -27,7 +27,9 @@ body {
   background: #fff;
   border-radius: 15px;
   box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.1);
+  margin: 30px auto; /* Center horizontally and set top margin */
 }
+
 
 /*header section*/
 .hero_area {
@@ -204,6 +206,18 @@ body {
 
 .wrapper form {
   padding: 10px 30px 50px 30px;
+}
+
+.field {
+  position: relative;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
 }
 
 .wrapper form .field {

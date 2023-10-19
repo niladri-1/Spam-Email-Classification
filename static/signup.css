@@ -15,7 +15,6 @@ body {
     padding: 10px;
     background: linear-gradient(135deg, #71b7e6, #9b59b6);
 }
-
 .container {
     max-width: 700px;
     width: 100%;
@@ -59,6 +58,25 @@ form .input-box span.details {
     font-weight: 500;
     margin-bottom: 5px;
 }
+
+.user-details .input-box .password-input {
+    position: relative;
+}
+
+.user-details .input-box .password-input input[type="password"] {
+    width: calc(100% - 40px); /* Make room for the button */
+}
+
+.user-details .input-box .password-input button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
 
 .user-details .input-box input {
     height: 45px;

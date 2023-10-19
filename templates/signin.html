@@ -45,12 +45,7 @@
   <header class="header_section">
     <div class="container-fluid">
       <nav class="navbar navbar-expand-lg custom_nav-container ">
-        <a class="navbar-brand" href="/">
-          <span>
-            Finexo
-          </span>
-        </a>
-
+        <a class="navbar-brand col-sm-8" href="/"><span>Finexo</span></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class=""> </span>
@@ -60,6 +55,9 @@
           <ul class="navbar-nav  ">
             <li class="nav-item ">
               <a class="nav-link" href="/">Home </a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="/about">About </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/signup"> <i class="fa fa-user" aria-hidden="true"></i> Sign Up</a>
@@ -72,6 +70,7 @@
     </div>
   </header>
   <!-- end header section -->
+
   <div class="wrapper">
     <div class="title">
       Login Form
@@ -81,10 +80,15 @@
         <input type="text" name="email" required>
         <label>Email Address</label>
       </div>
+      
       <div class="field">
-        <input type="password" name="password" required>
+        <input type="password" name="password" id="password" required>
         <label>Password</label>
+        <span id="togglePassword" class="password-toggle" onclick="togglePasswordVisibility()">
+          <i id="eyeIcon" class="fa fa-eye"></i>
+        </span>
       </div>
+
       <div class="field">
         <input type="submit" value="Login">
       </div>
@@ -92,5 +96,24 @@
         Not a member? <a href="/signup">Signup now</a>
       </div>
     </form>
+    </div>
+
+    <script>
+      function togglePasswordVisibility() {
+        const passwordInput = document.getElementById("password");
+        const eyeIcon = document.getElementById("eyeIcon");
+
+        if (passwordInput.type === "password") {
+          passwordInput.type = "text";
+          eyeIcon.classList.remove("fa-eye");
+          eyeIcon.classList.add("fa-eye-slash");
+        } else {
+          passwordInput.type = "password";
+          eyeIcon.classList.remove("fa-eye-slash");
+          eyeIcon.classList.add("fa-eye");
+        }
+      }
+    </script>
+
 </body>
 </html>
