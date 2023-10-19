@@ -43,7 +43,7 @@ To use the Spam Mail Classification app, follow these steps:
         password VARCHAR(255)
     );
 ```
-5. Run the Flask app using `python app.py`.
+6. Run the Flask app using `python app.py`.
 
 
 ## Author
