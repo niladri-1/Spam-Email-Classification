@@ -27,7 +27,8 @@ To use the Spam Mail Classification app, follow these steps:
 1. Clone this repository to your local machine.
 2. Set up the Flask backend and MySQL database as described in the documentation.
 3. Run the Flask app using `python app.py`.
-4. ```sql
+4.
+```sql
 CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     full_name VARCHAR(255),
