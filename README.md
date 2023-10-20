@@ -36,12 +36,13 @@ To use the Spam Mail Classification app, follow these steps:
 ```sql
     CREATE TABLE users (
         id INT AUTO_INCREMENT PRIMARY KEY,
-        full_name VARCHAR(255),
-        username VARCHAR(255) UNIQUE,
-        email VARCHAR(255) UNIQUE,
-        phone VARCHAR(15),
-        password VARCHAR(255)
-    );
+        full_name VARCHAR(255) NOT NULL,
+        username VARCHAR(255) UNIQUE NOT NULL,
+        email VARCHAR(255) UNIQUE NOT NULL,
+        phone VARCHAR(15) NOT NULL,
+        password VARCHAR(255) NOT NULL
+);
+
 ```
 6. Run the Flask app using `python app.py`.
 
