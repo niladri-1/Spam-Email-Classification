@@ -6,6 +6,23 @@ body {
   overflow-x: hidden;
 }
 
+body::-webkit-scrollbar {
+  width: 12px; /* Set the width of the scrollbar */
+}
+
+/* Style the thumb (the draggable part of the scrollbar) */
+body::-webkit-scrollbar-thumb {
+  background-color: #FFFF00; /* Set the background color of the thumb */
+  border-radius: 6px; /* Round the corners of the thumb */
+}
+
+/* Style the track (the background of the scrollbar) */
+body::-webkit-scrollbar-track {
+  background-color: transparent; /* Set the background color of the track */
+  border-radius: 50px; /* Round the corners of the track */
+}
+
+
 .layout_padding {
   padding: 90px 0;
 }

@@ -80,12 +80,12 @@
         <input type="text" name="email" required>
         <label>Email Address</label>
       </div>
-      
+
       <div class="field">
         <input type="password" name="password" id="password" required>
         <label>Password</label>
         <span id="togglePassword" class="password-toggle" onclick="togglePasswordVisibility()">
-          <i id="eyeIcon" class="fa fa-eye"></i>
+          <i id="eyeIcon" class="fa fa-eye-slash"></i>
         </span>
       </div>
 
@@ -105,12 +105,12 @@
 
         if (passwordInput.type === "password") {
           passwordInput.type = "text";
-          eyeIcon.classList.remove("fa-eye");
-          eyeIcon.classList.add("fa-eye-slash");
-        } else {
-          passwordInput.type = "password";
           eyeIcon.classList.remove("fa-eye-slash");
           eyeIcon.classList.add("fa-eye");
+        } else {
+          passwordInput.type = "password";
+          eyeIcon.classList.remove("fa-eye");
+          eyeIcon.classList.add("fa-eye-slash");
         }
       }
     </script>

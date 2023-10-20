@@ -36,14 +36,14 @@
                         <span class="details">Password</span>
                         <div class="password-input">
                             <input type="password" name="password" id="password" placeholder="Enter your password" required>
-                            <button type="button" id="togglePassword"><i class="fa-solid fa-eye"></i></button>
+                            <button type="button" id="togglePassword"><i class="fa-solid fa-eye-slash"></i></button>
                         </div>
                     </div>
                     <div class="input-box">
                         <span class="details">Confirm Password</span>
                         <div class="password-input">
                             <input type="password" name="confirm_password" id="confirm_password" placeholder="Confirm your password" required>
-                            <button type="button" id="toggleConfirmPassword"><i class="fa-solid fa-eye"></i></button>
+                            <button type="button" id="toggleConfirmPassword"><i class="fa-solid fa-eye-slash"></i></button>
                         </div>
                     </div>
                 </div>
@@ -64,10 +64,10 @@
 
             if (passwordField.type === "password") {
                 passwordField.type = "text";
-                passwordToggle.innerHTML = '<i class="fa-solid fa-eye-slash"></i>';
+                passwordToggle.innerHTML = '<i class="fa-solid fa-eye"></i>';
             } else {
                 passwordField.type = "password";
-                passwordToggle.innerHTML = '<i class="fa-solid fa-eye"></i>';
+                passwordToggle.innerHTML = '<i class="fa-solid fa-eye-slash"></i>';
             }
         });
 
@@ -77,10 +77,10 @@
 
             if (confirmPasswordField.type === "password") {
                 confirmPasswordField.type = "text";
-                confirmPasswordToggle.innerHTML = '<i class="fa-solid fa-eye-slash"></i>';
+                confirmPasswordToggle.innerHTML = '<i class="fa-solid fa-eye"></i>';
             } else {
                 confirmPasswordField.type = "password";
-                confirmPasswordToggle.innerHTML = '<i class="fa-solid fa-eye"></i>';
+                confirmPasswordToggle.innerHTML = '<i class="fa-solid fa-eye-slash"></i>';
             }
         });
     </script>

@@ -330,6 +330,10 @@ textarea {
     color: #ffffff;
 }
 
+textarea:focus {
+    outline: none; /* Removes the default focus outline */
+  }
+
 textarea::-webkit-scrollbar {
     width: 12px; /* Set the width of the scrollbar */
 }
@@ -370,6 +374,11 @@ textarea:active {
     margin-left: 12px;
     transition: background-color 0.3s, border-color 0.3s; /* Add a transition effect for the background and border color */
     transition: 500ms;
+    font-family: Monospace;
+}
+
+.predict1{
+    font-family: Monospace;
 }
 
 /* Apply the hover effect with an RGB border color combination */
@@ -411,4 +420,21 @@ textarea:active {
 .light-mode #moon-icon,
 .dark-mode #sun-icon {
     display: none;
+}
+
+
+/* .spm {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 20px 0;
+} */
+
+.left {
+    float: left;
+}
+
+.right {
+    margin-top: 50px;
+    float: right;
+    margin-right: 145px;
 }

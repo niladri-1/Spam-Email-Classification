@@ -2,6 +2,7 @@
 
 <!DOCTYPE html>
 <html>
+
 <head>
     <title> Finexo </title>
     <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.png') }}">
@@ -9,9 +10,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
 
 </head>
+
 <body>
-     <!-- header section strats -->
-     <header class="header_section">
+    <!-- header section strats -->
+    <header class="header_section">
         <div class="container-fluid">
             <nav class="navbar navbar-expand-lg custom_nav-container ">
                 <a class="navbar-brand" href="/">
@@ -49,13 +51,47 @@
     </header>
     <!-- end header section -->
 
+    <h1 class="spm left">Email Spam Classifier</h1>
+    <div id="result-container" class="right"></div>
 
-    <h1 class="spm">Email Spam Classifier</h1><br>
-    <form action="/predict" method="post">
-        <textarea id="message" name="message" rows="6" cols="50" placeholder="Enter the text .... "></textarea><br><br><br>
-        <input type="submit" value="Predict">
+    <form action="/predict" method="post" id="prediction-form">
+        <textarea id="message" name="message" rows="6" cols="50"
+            placeholder="Enter the text .... "></textarea><br><br><br>
+        <input type="submit" value="Predict" class="predict1">
         <button id="clear-button" type="button" class="clear-text">Clear</button>
     </form>
+    <!-- Add an empty div to display the result -->
+
+
+    <script src="{{ url_for('static', filename='index.js') }}"></script>
+
+    <script>
+        // Add an event listener for the form submission
+        document.getElementById("prediction-form").addEventListener("submit", function (e) {
+            e.preventDefault(); // Prevent the default form submission
+
+            // Make an AJAX request to get the prediction result
+            fetch("/predict", {
+                method: "POST",
+                body: new FormData(this)
+            })
+                .then(response => response.text())
+                .then(result => {
+                    // Display the result in the "result-container" div
+                    document.getElementById("result-container").innerHTML = result;
+                })
+                .catch(error => console.error(error));
+        });
+
+        // Add an event listener for the "Clear" button
+        document.getElementById("clear-button").addEventListener("click", function (e) {
+            // Clear the textarea and the result container
+            document.getElementById("message").value = "";
+            document.getElementById("result-container").innerHTML = "";
+        });
+    </script>
+
     <script src="{{ url_for('static', filename='index.js') }}"></script>
 </body>
+
 </html>
