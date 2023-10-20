@@ -41,8 +41,7 @@ To use the Spam Mail Classification app, follow these steps:
         email VARCHAR(255) UNIQUE NOT NULL,
         phone VARCHAR(15) NOT NULL,
         password VARCHAR(255) NOT NULL
-);
-
+    );
 ```
 6. Run the Flask app using `python app.py`.
 
