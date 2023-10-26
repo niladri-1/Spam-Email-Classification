@@ -141,7 +141,7 @@ def login():
 def logout():
     # Clear the user session to log out
     session.pop('user', None)
-    return redirect(url_for('signin'))  # Redirect to the sign-in page after logging out
+    return redirect(url_for('home'))  # Redirect to the sign-in page after logging out
 
 if __name__ == '__main__':
     app.run(debug=True)
