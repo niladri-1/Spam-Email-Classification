@@ -1,3 +1,27 @@
+// Add an event listener for the form submission
+document.getElementById("prediction-form").addEventListener("submit", function (e) {
+    e.preventDefault(); // Prevent the default form submission
+
+    // Make an AJAX request to get the prediction result
+    fetch("/predict", {
+        method: "POST",
+        body: new FormData(this)
+    })
+        .then(response => response.text())
+        .then(result => {
+            // Display the result in the "result-container" div
+            document.getElementById("result-container").innerHTML = result;
+        })
+        .catch(error => console.error(error));
+});
+
+// Add an event listener for the "Clear" button
+document.getElementById("clear-button").addEventListener("click", function (e) {
+    // Clear the textarea and the result container
+    document.getElementById("message").value = "";
+    document.getElementById("result-container").innerHTML = "";
+});
+
 
 const themeToggle = document.getElementById('theme-toggle');
 const body = document.body;
