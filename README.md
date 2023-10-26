@@ -1,5 +1,3 @@
-Your project description and setup instructions look good, but you can make your README even better with a few enhancements:
-
 # Spam Mail Classification
 
 ## Description
