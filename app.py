@@ -6,7 +6,6 @@ from nltk.stem import PorterStemmer
 import mysql.connector
 
 
-
 app = Flask(__name__)
 app.secret_key = '1c8073775dbc85a92ce20ebd44fd6a4fd832078f59ef16ec'  # Replace with a secure secret key
 
@@ -40,6 +39,14 @@ def transform_text(text):
 
     return " ".join(y)
 
+# Define your database connection
+db = mysql.connector.connect(
+    host="localhost",
+    user="root",
+    password="@2001",
+    database="smc"
+)
+
 @app.route('/')
 def home():
     return render_template('home.html')
@@ -50,7 +57,11 @@ def about():
 
 @app.route('/index')
 def index():
-    return render_template('index.html')
+    # Check if the 'user' session variable exists (i.e., the user is logged in)
+    if 'user' in session:
+        return render_template('index.html')
+    else:
+        return redirect(url_for('signin'))  # Redirect to the sign-in page if the user is not logged in
 
 @app.route('/predict', methods=['POST'])
 def predict():
@@ -68,18 +79,9 @@ def predict():
 def signin():
     return render_template('signin.html')
 
-
-
 @app.route('/signup', methods=['GET'])
 def signup():
     return render_template('signup.html')
-
-db = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="@2001",
-    database="smc"
-)
 
 @app.route('/register', methods=['POST'])
 def register():
@@ -107,12 +109,12 @@ def register():
 
     return "Invalid request method"
 
-
 @app.route('/login', methods=['POST'])
 def login():
     if request.method == 'POST':
         email = request.form['email']
         password = request.form['password']
+        remember_me = request.form.get('remember_me')  # Get the 'remember_me' checkbox value
 
         # Query the database to check if the email and password match
         cur = db.cursor()
@@ -121,14 +123,23 @@ def login():
         cur.close()
 
         if user:
-            # Successful login, you can store user session or redirect to a different page
-            # For example, you can set a session variable to remember the user's login state
-            return render_template('index.html')
+            # Successful login, set the 'user' session variable to remember the user's login state
+            session['user'] = user
+
+            # Set the 'remember_me' session variable to control the session duration
+            if remember_me:
+                session.permanent = True  # Make the session permanent
+            return redirect(url_for('index'))  # Redirect to the index page
         else:
             return "Login failed. Check your email and password."
 
     return "Invalid request method"
 
+@app.route('/logout')
+def logout():
+    # Clear the user session to log out
+    session.pop('user', None)
+    return redirect(url_for('signin'))  # Redirect to the sign-in page after logging out
 
 if __name__ == '__main__':
     app.run(debug=True)

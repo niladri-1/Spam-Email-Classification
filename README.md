@@ -31,8 +31,9 @@ To use the Spam Mail Classification app, follow these steps:
     pip install Flask
     pip install nltk
     pip install mysql-connector-python
+    pip install joblib
 ```
-5. Create a `SMC` Database & Table 
+5. Create a `SMC` Database & Table
 ```sql
     CREATE TABLE users (
         id INT AUTO_INCREMENT PRIMARY KEY,
