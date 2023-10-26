@@ -77,6 +77,8 @@ def predict():
 
 @app.route('/signin')
 def signin():
+    if 'user' in session:
+        return redirect(url_for('index'))
     return render_template('signin.html')
 
 @app.route('/signup', methods=['GET'])
