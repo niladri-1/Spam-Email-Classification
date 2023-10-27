@@ -125,13 +125,11 @@ def login():
         cur.close()
 
         if user:
-            # Successful login, set the 'user' session variable to remember the user's login state
             session['user'] = user
 
-            # Set the 'remember_me' session variable to control the session duration
             if remember_me:
-                session.permanent = True  # Make the session permanent
-            return redirect(url_for('index'))  # Redirect to the index page
+                session.permanent = True
+            return redirect(url_for('index'))
         else:
             return "Login failed. Check your email and password."
 

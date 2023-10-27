@@ -63,6 +63,12 @@ To use the Spam Mail Classification app, follow these steps:
    python app.py
    ```
 
+   - Goto browser to open this website in Localhost:
+
+   ```bash
+   http://127.0.0.1:5000/
+   ```
+
 ## Author
 
 - **Niladri Chatterjee**
