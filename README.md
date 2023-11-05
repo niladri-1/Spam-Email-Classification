@@ -45,6 +45,10 @@ To use the Spam Mail Classification app, follow these steps:
    CREATE DATABASE smc;
    ```
 
+    ```sql
+   USE smc;
+   ```
+
    ```sql
    CREATE TABLE users (
        id INT AUTO_INCREMENT PRIMARY KEY,
