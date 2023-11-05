@@ -14,35 +14,37 @@
     <div class="container">
         <div class="title">Registration</div>
         <div class="content">
-            <form method="POST" action="/register">
+            <form method="POST" action="/register" onsubmit="return validateForm()">
                 <div class="user-details">
                     <div class="input-box">
                         <span class="details">Full Name</span>
-                        <input type="text" name="full_name" placeholder="Enter your name" required>
+                        <input type="text" name="full_name" id="full_name" placeholder="e.g. John Doe" required>
+                        <span id="name-error" style="color: red;"></span>
                     </div>
                     <div class="input-box">
                         <span class="details">Username</span>
-                        <input type="text" name="username" placeholder="Enter your username" required>
+                        <input type="text" name="username" placeholder="e.g. JohnDoe" required>
                     </div>
                     <div class="input-box">
                         <span class="details">Email</span>
-                        <input type="text" name="email" placeholder="Enter your email" required>
+                        <input type="email" name="email" id="email" placeholder="e.g. abc@mail.com" required>
+                        <span id="email-error" style="color: red;"></span>
                     </div>
                     <div class="input-box">
                         <span class="details">Phone Number</span>
-                        <input type="text" name="phone" placeholder="Enter your number" required>
+                        <input type="text" name="phone" id="phone" placeholder="e.g. 0123456789" required>
                     </div>
                     <div class="input-box">
                         <span class="details">Password</span>
                         <div class="password-input">
-                            <input type="password" name="password" id="password" placeholder="Enter your password" required>
+                            <input type="password" name="password" id="password" placeholder="e.g. **********" required>
                             <button type="button" id="togglePassword"><i class="fa-solid fa-eye-slash"></i></button>
                         </div>
                     </div>
                     <div class="input-box">
                         <span class="details">Confirm Password</span>
                         <div class="password-input">
-                            <input type="password" name="confirm_password" id="confirm_password" placeholder="Confirm your password" required>
+                            <input type="password" name="confirm_password" id="confirm_password" placeholder="e.g. **********" required>
                             <button type="button" id="toggleConfirmPassword"><i class="fa-solid fa-eye-slash"></i></button>
                         </div>
                     </div>
@@ -57,33 +59,8 @@
         </div>
     </div>
 
-    <script>
-        document.getElementById("togglePassword").addEventListener("click", function () {
-            const passwordField = document.getElementById("password");
-            const passwordToggle = document.getElementById("togglePassword");
+    <script src="{{ url_for('static', filename='signup.js') }}"></script>
 
-            if (passwordField.type === "password") {
-                passwordField.type = "text";
-                passwordToggle.innerHTML = '<i class="fa-solid fa-eye"></i>';
-            } else {
-                passwordField.type = "password";
-                passwordToggle.innerHTML = '<i class="fa-solid fa-eye-slash"></i>';
-            }
-        });
-
-        document.getElementById("toggleConfirmPassword").addEventListener("click", function () {
-            const confirmPasswordField = document.getElementById("confirm_password");
-            const confirmPasswordToggle = document.getElementById("toggleConfirmPassword");
-
-            if (confirmPasswordField.type === "password") {
-                confirmPasswordField.type = "text";
-                confirmPasswordToggle.innerHTML = '<i class="fa-solid fa-eye"></i>';
-            } else {
-                confirmPasswordField.type = "password";
-                confirmPasswordToggle.innerHTML = '<i class="fa-solid fa-eye-slash"></i>';
-            }
-        });
-    </script>
 </body>
 
 </html>
