@@ -50,6 +50,20 @@ function validateForm() {
 
 
 
+function validateUsername() {
+    var usernameInput = document.getElementById("username");
+    var usernameError = document.getElementById("username-error");
+
+    if (usernameInput.value.includes(" ")) {
+        usernameError.textContent = "Username cannot contain spaces.";
+        usernameInput.setCustomValidity("Username cannot contain spaces.");
+    } else {
+        usernameError.textContent = "";
+        usernameInput.setCustomValidity("");
+    }
+}
+
+
 
 
 

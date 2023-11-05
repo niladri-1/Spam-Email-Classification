@@ -23,28 +23,29 @@
                     </div>
                     <div class="input-box">
                         <span class="details">Username</span>
-                        <input type="text" name="username" placeholder="e.g. JohnDoe" required>
+                        <input type="text" name="username" id="username" placeholder="e.g. JohnDoe" required oninput="validateUsername()">
+                        <span id="username-error" style="color: red;"></span>
                     </div>
                     <div class="input-box">
                         <span class="details">Email</span>
                         <input type="email" name="email" id="email" placeholder="e.g. abc@mail.com" required>
                         <span id="email-error" style="color: red;"></span>
                     </div>
-                    <div class="input-box">
+                    <div class ="input-box">
                         <span class="details">Phone Number</span>
                         <input type="text" name="phone" id="phone" placeholder="e.g. 0123456789" required>
                     </div>
                     <div class="input-box">
                         <span class="details">Password</span>
                         <div class="password-input">
-                            <input type="password" name="password" id="password" placeholder="e.g. **********" required>
+                            <input type="password" name="password" id="password" placeholder="&bullet;&bullet;&bullet;&bullet;&bullet;&bullet;" required>
                             <button type="button" id="togglePassword"><i class="fa-solid fa-eye-slash"></i></button>
                         </div>
                     </div>
                     <div class="input-box">
                         <span class="details">Confirm Password</span>
                         <div class="password-input">
-                            <input type="password" name="confirm_password" id="confirm_password" placeholder="e.g. **********" required>
+                            <input type="password" name="confirm_password" id="confirm_password" placeholder="&bullet;&bullet;&bullet;&bullet;&bullet;&bullet;" required>
                             <button type="button" id="toggleConfirmPassword"><i class="fa-solid fa-eye-slash"></i></button>
                         </div>
                     </div>
@@ -62,5 +63,4 @@
     <script src="{{ url_for('static', filename='signup.js') }}"></script>
 
 </body>
-
 </html>
