@@ -72,7 +72,7 @@ const emailError = document.getElementById('email-error');
 emailInput.addEventListener('input', function () {
     const email = emailInput.value.toLowerCase();
     if (!validateEmail(email)) {
-        emailError.textContent = "Please enter a valid email address (e.g., example@gmail.com).";
+        emailError.textContent = "Invalid email address (e.g., abc@gmail.com).";
     } else {
         emailError.textContent = "";
     }
@@ -88,7 +88,7 @@ function validateEmail(email) {
 function validateForm() {
     const email = emailInput.value.toLowerCase();
     if (!validateEmail(email)) {
-        emailError.textContent = "Invalid email address (e.g., example@gmail.com)!";
+        emailError.textContent = "Invalid email address (e.g., abc@gmail.com)!";
         return false;
     }
     emailError.textContent = "";
