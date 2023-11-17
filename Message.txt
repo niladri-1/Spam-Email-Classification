@@ -1,0 +1,26 @@
+        Spam Email Texts:
+
+Congratulations! You've won a $1,000,000 prize. Claim it now!
+You've been pre-approved for a credit card. Apply now!
+Congratulations! You've won a luxury vacation for two. Click here to claim your prize!
+You've been selected as the winner of a $500 Amazon gift card. Claim it today!
+Free iPhone 11 giveaway for lucky winners like you. Enter now!
+You've won a free cruise to the Caribbean. Call now to claim your ticket.
+You're the lucky winner of a $1,000 shopping spree. Shop now!
+Your credit score can be improved instantly. Click here for a free credit boost!
+You've won a new car in our lottery! Claim your prize by clicking this link.
+Congratulations! You've been selected as our grand prize winner. Claim your cash reward now!
+
+
+        Non-Spam (Ham) Email Texts:
+
+Hi, it's John. Just wanted to check in and see how you're doing.
+Reminder: Your meeting is scheduled for 2 PM today in Conference Room B.
+Your order with Amazon has been shipped. Tracking details enclosed.
+Invitation to our company's annual holiday party. RSVP requested.
+Weekly newsletter: Stay updated on the latest industry news and trends.
+Thank you for your recent purchase at our online store. Enjoy your products!
+Weather update: Expect sunshine and clear skies this weekend.
+Notification: Your monthly utility bill is now available for viewing online.
+Congratulations on your work anniversary! Here's to many more years.
+Happy birthday! We hope you have a fantastic day celebrating.
