@@ -43,7 +43,7 @@ def transform_text(text):
 db = mysql.connector.connect(
     host="localhost",
     user="root",
-    password="@2001",
+    password="2001",
     database="smc"
 )
 
