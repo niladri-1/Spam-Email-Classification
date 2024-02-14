@@ -274,34 +274,6 @@ input[type="submit"] {
     transition: background-color 0.3s, color 0.3s;
 }
 
-/* Create an animation that changes the border color through RGB values */
-@keyframes rgbBorderAnimation {
-    0% {
-        border-color: #007BFF;
-        /* Start with the initial blue color */
-    }
-
-    25% {
-        border-color: #00FF00;
-        /* Transition to green at 25% */
-    }
-
-    50% {
-        border-color: #FF0000;
-        /* Transition to red at 50% */
-    }
-
-    75% {
-        border-color: #FFFF00;
-        /* Transition to yellow at 75% */
-    }
-
-    100% {
-        border-color: #FF00FF;
-        /* End with magenta at 100% */
-    }
-}
-
 /* Apply the border color animation and a smooth transition on hover */
 input[type="submit"] {
     padding: 10px 20px;
@@ -329,33 +301,6 @@ input[type="submit"]:hover {
 
 #sun-icon {
     color: #333;
-}
-
-@keyframes borderColorAnimation {
-    0% {
-        border-color: rgba(255, 0, 0, 1);
-        /* Start with red */
-    }
-
-    25% {
-        border-color: rgba(0, 255, 0, 1);
-        /* Transition to green at 25% */
-    }
-
-    50% {
-        border-color: rgba(0, 0, 255, 1);
-        /* Transition to blue at 50% */
-    }
-
-    75% {
-        border-color: rgba(255, 255, 0, 1);
-        /* Transition to yellow at 75% */
-    }
-
-    100% {
-        border-color: rgba(255, 0, 255, 1);
-        /* End with magenta at 100% */
-    }
 }
 
 textarea {
